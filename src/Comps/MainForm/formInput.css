@@ -1,0 +1,38 @@
+.hero-input{
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--header-bgcolor);    
+    box-shadow: 0px 2px 9px #0000000e;
+    border: none;
+    border-radius: 5px;
+    padding: 19px 0px 19px 74px;
+    color: var(--text-color);
+}
+.hero-input::placeholder{
+    color: var(--text-color);
+}
+.form::before{
+    position: absolute;
+    content: "";
+    background-image: url("../../Another/Img/icon-search-black.svg");
+    width: 58px;
+    height: 58px;
+    background-size: 18px;
+    background-position: calc(50% + 10px) calc(50% - 1px);
+    background-repeat: no-repeat;
+}
+.select{
+    padding: 18px 19px 18px 24px;
+    background-color: var(--header-bgcolor);
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    border: none;
+    color: var(--text-color);
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
