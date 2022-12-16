@@ -4,12 +4,12 @@ import "./header.css"
 const Header =()=>{
     return <>
         <header>
-        <div class="container">
-            <div class="header">
-                <a class="header-link" href="index.html">
+        <div className="container">
+            <div className="header">
+                <a className="header-link" href="index.html">
                     Where in the world?
                 </a>
-                <button class="heder-text" type="submit">
+                <button className="heder-text" type="submit">
                     Dark Mode
                 </button>
             </div>

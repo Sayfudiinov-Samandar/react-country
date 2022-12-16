@@ -1,36 +1,29 @@
 import React from "react";
-import GermanFlag from "../../Another/Img/germany.svg.png"
-import "./main.css"
+import "./main.css";
 
-const Main=()=>{
-    return<>
-                            <li class="col-3 p-0 hero-list-box"> 
-                            <img src={GermanFlag} width="267" height="160" alt="Flag-Germany" /> 
-                            <div class="box-place">
-                                <h3 class="hero-list-box-title">
-                                  Germany
-                                </h3>
-                                <p class="hero-list-box-text">
-                                    <strong>
-                                        Population:
-                                    </strong>
-                                    28,875
-                                </p>
-                                <p class="hero-list-box-text">
-                                    <strong>
-                                        Region:
-                                    </strong>
-                                    Europe
-                                </p>
-                                <p class="hero-list-box-text">
-                                    <strong>
-                                        Capital:
-                                    </strong>
-                                    Mariehamn
-                                </p>
-                            </div>
-                        </li>
+const Main = (props) => {
+  return (
+    <>
+      <li className="col-3 p-0 hero-list-box">
+        <img src={props.item.flags.svg} width="100%" height="" alt="Flag-Germany" />
+        <div className="box-place">
+          <h3 className="hero-list-box-title">{props.item.name.common}</h3>
+          <p className="hero-list-box-text">
+            <strong>Population:</strong>
+            {props.item.population}
+          </p>
+          <p className="hero-list-box-text">
+            <strong>Region:</strong>
+            {props.item.region}
+          </p>
+          <p className="hero-list-box-text">
+            <strong>Capital:</strong>
+            {props.item.capital}
+          </p>
+        </div>
+      </li>
     </>
-}
+  );
+};
 
 export default Main;
