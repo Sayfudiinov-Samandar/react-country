@@ -10,7 +10,6 @@ export function Country() {
     fetch("https://restcountries.com/v3.1/name/" + country.name)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCountry(data);
       });
   }, [country]);
