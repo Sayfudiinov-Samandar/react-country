@@ -34,3 +34,10 @@ header{
     margin-right: 8px;
     background-repeat: no-repeat;
 }
+
+.lang-select{
+    padding: 2px;
+    border-radius: 8px;
+    color: var(--text-color);
+    background-color: var(--header-bgcolor);
+}

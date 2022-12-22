@@ -25,7 +25,7 @@ return <>
                    {Lang[lang].themeDark}
                 </button>
 
-                <select onChange={(e)=>{
+                <select className="lang-select" onChange={(e)=>{
                     langStete(e.target.value)
                 }} defaultValue={lang}>
                     <option value="uz">UZ</option>
