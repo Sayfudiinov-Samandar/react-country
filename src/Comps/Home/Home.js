@@ -1,9 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import Main from "../Main/Main"
 import { FormInput } from "../MainForm/FormInput"
-
-export  function Home() {
-
+export  function Home({lang}) {
  const [data, setCountry] = useState([]);
   let [text, setText] = React.useState("");
 
@@ -52,12 +50,12 @@ export  function Home() {
         <main>
         <section className="hero">
           <div className="container">
-            <FormInput GetInputValue={InputValue} GetSelectValue={SelectValue}/>
+            <FormInput lang={lang} GetInputValue={InputValue} GetSelectValue={SelectValue}/>
             <div className="hero-father-box">
               {data.length !== 0 ? (
                 <ul className="row hero-list">
                   {data.map((item) => {
-                    return <Main key={item.id} item={item} />;
+                    return <Main lang={lang} key={item.id} item={item} />;
                   })}
                 </ul>
               ) : (

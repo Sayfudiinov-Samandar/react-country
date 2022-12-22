@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./country.css";
 import { useParams, useNavigate } from "react-router-dom";
-
-export function Country() {
+import  { Lang } from "../../lang/Lang"
+export function Country( { lang } ) {
   const [countryApi, setCountry] = React.useState([]);
   const country = useParams();
 
@@ -54,39 +54,39 @@ export function Country() {
                 <div className="d-flex country-text">
                   <div className="d-flex flex-column gap-3">
                     <strong className="d-flex gap-2 m-0">
-                      Native Name:{" "}
+                      {Lang[lang].nativeName}:{" "}
                       <p className="m-0 opacity-75">
                         {item.name.nativeName.swe ? item.name.nativeName.swe: "Not native name"}
                       </p>
                     </strong>
                     <strong className="d-flex gap-2 m-0">
-                      Population:
+                      {Lang[lang].population}:
                       <p className="m-0 opacity-75">{item.population}</p>
                     </strong>
                     <strong className="d-flex gap-2 m-0">
-                      Region:
+                      {Lang[lang].region}:
                       <p className="m-0 opacity-75"> {item.region}</p>
                     </strong>
                     <strong className="d-flex gap-2 m-0">
-                      Sub region:
+                      {Lang[lang].subregion}:
                       <p className="m-0 opacity-75"> {item.subregion}</p>
                     </strong>
                   </div>
 
                   <div className="d-flex flex-column gap-3">
                     <strong className="d-flex gap-2 m-0">
-                      Top Lavel Domain:
+                      {Lang[lang].topLeavelDemon}:
                       <p className="m-0 opacity-75"> {item.tld}</p>
                     </strong>
                     <strong className="d-flex gap-2 m-0">
-                      Currencies:
+                      {Lang[lang].currencies}:
                       <p className="m-0 opacity-75">
                         {" "}
                         {Object.keys(item.currencies)}
                       </p>
                     </strong>
                     <strong className="d-flex gap-2 m-0">
-                      Language:
+                     {Lang[lang].language}:
                       <p className="m-0 opacity-75">
                         {" "}
                         {Object.values(item.languages).join(", ")}
@@ -94,8 +94,8 @@ export function Country() {
                     </strong>
                   </div>
                 </div>
-                <div className="d-flex mt-5 gap-3 align-items-center">Border Countries: <p className="m-0" >{item.borders ? (item.borders.map(item=>(
-                    <button className="btn btn-light ms-2 ">{item}</button>
+                <div className="d-flex mt-5 gap-3 align-items-center single-country">{Lang[lang].borders}: <p className="m-0" >{item.borders ? (item.borders.map(item=>(
+                    <button className="btn btn-light ms-2">{item}</button>
                 ))):(<span>No borders</span>)}</p></div>
               </div>
 

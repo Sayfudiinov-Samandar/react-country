@@ -12,3 +12,6 @@
 .country-text{
     gap: 80px;
 }
+.single-country{
+    color: var(--text-color);
+}

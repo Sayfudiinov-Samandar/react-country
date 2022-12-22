@@ -7,23 +7,36 @@ import Page404 from "./Comps/Error/page404";
 import { Country } from "./Comps/Country/Country";
 
 const App = () => {
+
+  const [theme, themeStete]= useState(localStorage.getItem("theme") || "")
+  const [lang, langStete]= useState(localStorage.getItem("lang") || "uz")
+
+
+  useEffect(()=>{
+    localStorage.setItem("theme", theme)
+  },[theme])
+
+  useEffect(()=>{
+    localStorage.setItem("lang", lang)
+  },[lang])
+
   return (
-    <>
-      <Header />
+    <div className={theme}>
+      <Header themeStete={themeStete} theme={theme} langStete={langStete} lang={lang}/>
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Home />
+              <Home lang={lang} />
             </>
           }
         />
-        <Route path="/country/:name" element={<Country />} />
+        <Route path="/country/:name" element={<Country lang={lang} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-    </>
+    </div>
   );
 };
 export default App;
